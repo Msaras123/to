@@ -1,0 +1,24 @@
+
+<h2>To-Do List</h2>
+<input id="t" placeholder="Enter task">
+<button onclick="add()">Add</button>
+<ul id="l"></ul>
+
+<script>
+function add(){
+ let t=document.getElementById("t");
+ if(!t.value.trim()) return;
+ let li=document.createElement("li");
+ let x=document.createElement("input");
+ x.value=t.value;
+ let b=document.createElement("button");
+ b.innerText="Update";
+ b.onclick=()=>x.disabled ? x.disabled=false : x.disabled=true;
+ let d=document.createElement("button");
+ d.innerText="Delete";
+ d.onclick=()=>li.remove();
+ li.append(x,b,d);
+ document.getElementById("l").append(li);
+ t.value="";
+}
+</script>
